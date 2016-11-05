@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Competency Map',    null,                 0,                               0],
+          ['America',   'Competency Map',             0,                               0],
+          ['Europe',    'Competency Map',             0,                               0],
+          ['Asia',      'Competency Map',             0,                               0],
+          ['Australia', 'Competency Map',             0,                               0],
+          ['Africa',    'Competency Map',             0,                               0],
+          ['Brazil',    'Competency Map',            11,                              10],
+          ['USA',       'Competency Map',            52,                              31],
+          ['Mexico',    'Competency Map',            24,                              12],
+          ['Canada',    'Competency Map',            16,                              -23],
+          ['France',    'Competency Map',             42,                              -11],
+          ['Germany',   'Competency Map',             31,                              -2],
+          ['Sweden',    'Competency Map',             22,                              -13],
+          ['Italy',     'Competency Map',             17,                              4],
+          ['UK',        'Competency Map',             21,                              -5],
+          ['China',     'Competency Map',               36,                              4],
+          ['Japan',     'Competency Map',               20,                              -12],
+          ['India',     'Competency Map',               40,                              63],
+          ['Laos',      'Competency Map',               4,                               34],
+          ['Mongolia',  'Competency Map',               1,                               -5],
+          ['Israel',    'Competency Map',               12,                              24],
+          ['Iran',      'Competency Map',               18,                              13],
+          ['Pakistan',  'Competency Map',               11,                              -52],
+          ['Egypt',     'Competency Map',             21,                              0],
+          ['S. Africa', 'Competency Map',             30,                              43],
+          ['Sudan',     'Competency Map',             12,                              2],
+          ['Congo',     'Competency Map',             10,                              12],
+          ['Zaire',     'Competency Map',             8,                               10]
+        ]);
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#f00',
+          midColor: '#ddd',
+          maxColor: '#0d0',
+          headerHeight: 15,
+          fontColor: 'black',
+          showScale: true
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
